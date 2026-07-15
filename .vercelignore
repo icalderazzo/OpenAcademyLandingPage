@@ -1,0 +1,3 @@
+# Source + build tooling — only index.html needs to ship to the static deploy.
+index.template.html
+build.py
