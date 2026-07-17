@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Open Academy">
+  <rect width="128" height="128" rx="28" fill="#1d4ed8"></rect>
+  <g transform="translate(20.8 20.8) scale(0.9)">
+    <path d="M48 26 L76 40 L48 54 L20 40 Z" fill="#ffffff"></path>
+  <path d="M33 46 L33 60 Q33 65 38 66 L58 66 Q63 65 63 60 L63 46" fill="none" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></path>
+  <path d="M70 42 L70 62" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></path>
+  <circle cx="70" cy="65" r="4" fill="#ffffff"></circle>
+  </g>
+</svg>
