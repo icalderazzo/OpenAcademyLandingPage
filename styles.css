@@ -458,3 +458,95 @@ html,body{margin:0}
     .pager{align-items:center;display:flex;gap:10px;}
     .page-of{color:#6b7280;font-size:0.8rem;font-weight:700;}
     .row-btn[aria-disabled='true']{color:#9ca3af;}
+
+    /* Teacher agenda showcase — phone mockups, mirroring the real instructor "Agenda" (today-page +
+       day-calendar + week-nav) and "Lista de clase" (roster) screens in OpenAcademyUI. */
+    .agenda-demo{align-items:center;display:grid;gap:56px;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);}
+    @media (max-width:900px){.agenda-demo{grid-template-columns:1fr;gap:32px;}}
+    .agenda-demo .section-head{text-align:left;margin-inline:0;justify-items:start;align-items:start;max-width:none;}
+    .agenda-demo .section-head .subtitle{margin-inline:0;text-align:left;}
+    .agenda-demo .demo-list{margin-top:24px;}
+
+    .phone-stage{align-items:center;display:flex;flex-wrap:wrap;gap:28px;justify-content:center;}
+    .phone{background:linear-gradient(155deg,#1f2937,#0b0f19);border-radius:46px;box-shadow:var(--shadow-float),inset 0 0 0 2px rgba(255,255,255,0.06);flex:0 0 auto;padding:10px;position:relative;width:312px;}
+    .phone::before,.phone::after{background:#0b0f19;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);content:'';position:absolute;}
+    .phone::before{border-radius:2px 0 0 2px;height:58px;left:-2px;top:118px;width:3px;}
+    .phone::after{border-radius:0 2px 2px 0;height:80px;right:-2px;top:150px;width:3px;}
+    .phone--secondary{margin-top:56px;}
+    @media (max-width:700px){.phone--secondary{margin-top:0;}}
+    @media (max-width:360px){.phone{width:278px;}}
+    .phone-notch{background:#000;border-radius:var(--radius-full);height:19px;left:50%;position:absolute;top:15px;transform:translateX(-50%);width:76px;z-index:5;}
+    .phone-screen{background:#f8fafc;border-radius:36px;display:flex;flex-direction:column;height:616px;overflow:hidden;width:100%;}
+    @media (max-width:360px){.phone-screen{height:568px;}}
+    .phone-status{align-items:center;color:#111827;display:flex;flex:none;font-size:0.72rem;font-weight:800;justify-content:space-between;padding:17px 22px 3px;}
+    .phone-status-icons{align-items:center;display:inline-flex;gap:5px;}
+    .phone-app-top{align-items:center;background:var(--brand-primary);color:#fff;display:flex;flex:none;gap:10px;justify-content:space-between;padding:11px 16px;}
+    .phone-app-top--sub{justify-content:flex-start;}
+    .phone-app-brand{align-items:center;display:flex;font-size:0.84rem;font-weight:800;gap:8px;}
+    .phone-app-brand .logo-chip,.phone-avatar{height:26px;width:26px;}
+    .phone-app-brand .logo-chip{align-items:center;background:color-mix(in srgb,#fff 18%,var(--brand-primary));border:1px solid color-mix(in srgb,#fff 34%,var(--brand-primary));color:#fff;display:inline-flex;justify-content:center;}
+    .phone-app-brand .logo-chip .chip-mark{display:block;height:16px;width:16px;}
+    .phone-avatar{align-items:center;background:color-mix(in srgb,#fff 18%,var(--brand-primary));border:1px solid color-mix(in srgb,#fff 34%,var(--brand-primary));border-radius:var(--radius-full);color:#fff;display:inline-flex;flex:0 0 auto;font-size:0.66rem;font-weight:800;justify-content:center;}
+    .phone-back{align-items:center;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius-sm);color:#fff;display:inline-flex;flex:0 0 auto;height:28px;justify-content:center;padding:0;width:28px;}
+    .phone-app-title{display:grid;gap:1px;min-width:0;}
+    .phone-app-title strong{color:#fff;font-size:0.84rem;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .phone-app-title span{color:#fff;font-size:0.68rem;font-weight:700;opacity:0.82;}
+    .phone-app-body{align-content:start;background:#f8fafc;display:grid;flex:1;gap:10px;grid-template-columns:minmax(0,1fr);min-width:0;overflow:hidden;padding:14px 11px 16px;}
+    .phone-app-body>*{min-width:0;}
+    .phone-day-label{color:#9ca3af;font-size:0.66rem;font-weight:800;letter-spacing:0.04em;margin:0;text-transform:uppercase;}
+    .phone-body-head{align-items:center;display:flex;gap:8px;justify-content:space-between;}
+
+    /* Today / agenda phone — mirrors today-page.component + week-nav.component + day-calendar.component */
+    .tcal-head{display:grid;gap:2px;}
+    .tcal-greet{color:#111827;font-size:1.04rem;font-weight:800;letter-spacing:-0.01em;margin:0;}
+    .wk-mini{display:grid;gap:4px;grid-template-columns:repeat(7,minmax(0,1fr));}
+    .wk-mini-day{align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius-sm);display:grid;gap:2px;justify-items:center;padding:6px 1px 5px;}
+    .wk-mini-day small{color:#9ca3af;font-size:0.54rem;font-weight:800;letter-spacing:0.01em;text-transform:uppercase;}
+    .wk-mini-day b{color:#111827;font-size:0.76rem;font-variant-numeric:tabular-nums;font-weight:800;}
+    .wk-mini-dot-slot{height:4px;margin-top:1px;}
+    .wk-mini-dot{background:var(--brand-primary);border-radius:50%;display:block;height:4px;width:4px;}
+    .wk-mini-day.is-selected{background:var(--brand-primary);border-color:var(--brand-primary);}
+    .wk-mini-day.is-selected small{color:rgb(255 255 255/0.82);}
+    .wk-mini-day.is-selected b{color:#fff;}
+    .wk-mini-day.is-selected .wk-mini-dot{background:#fff;}
+    .tnext{background-image:linear-gradient(180deg,var(--brand-primary-surface),transparent 68%);background-color:#fff;border:1px solid var(--brand-primary-surface-border);border-radius:var(--radius-md);display:grid;gap:3px;padding:12px 14px;}
+    .tnext-label{color:var(--brand-primary-text);font-size:0.62rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;}
+    .tnext-time{color:#111827;font-size:1.3rem;font-variant-numeric:tabular-nums;font-weight:800;line-height:1.1;}
+    .tnext-title{color:#111827;font-size:0.84rem;font-weight:800;}
+    .tnext-meta{color:#6b7280;font-size:0.72rem;font-weight:650;}
+    .tnext-btn{align-items:center;background:var(--brand-primary);border-radius:var(--radius-sm);color:#fff;display:inline-flex;font-size:0.74rem;font-weight:800;height:30px;justify-content:center;margin-top:5px;padding:0 12px;width:fit-content;}
+    .tcal-panel-head{align-items:center;display:flex;justify-content:space-between;}
+    .tcal-panel-title{color:#111827;font-size:0.88rem;font-weight:800;margin:0;text-transform:capitalize;}
+    .tcal-panel-date{color:#6b7280;font-size:0.7rem;font-weight:650;margin:1px 0 0;}
+    .tcal-panel-hours{color:#9ca3af;font-size:0.68rem;font-weight:700;}
+    .tcal{display:grid;gap:6px;grid-template-columns:26px minmax(0,1fr);}
+    .tcal-hours{display:grid;}
+    .tcal-hour{color:#9ca3af;font-size:0.58rem;font-weight:700;font-variant-numeric:tabular-nums;height:38px;text-align:right;transform:translateY(-6px);}
+    .tcal-track{background-image:linear-gradient(to bottom,#eef2f7 1px,transparent 1px);background-size:100% 38px;border-left:1px solid #eef2f7;height:190px;position:relative;}
+    .tcal-lesson{align-content:center;background:var(--brand-primary-surface);border:1px solid var(--brand-primary-surface-border);border-left:3px solid var(--brand-primary);border-radius:var(--radius-sm);box-shadow:var(--shadow-resting);display:grid;gap:1px;left:6px;overflow:hidden;padding:4px 8px;position:absolute;right:4px;}
+    .tcal-lesson.c-teal{background:var(--brand-secondary-surface);border-color:var(--brand-secondary-surface-border);border-left-color:var(--brand-secondary);}
+    .tcal-lesson.c-teal .tcal-lesson-time{color:var(--brand-secondary-text);}
+    .tcal-lesson-time{color:var(--brand-primary-text);font-size:0.6rem;font-variant-numeric:tabular-nums;font-weight:800;}
+    .tcal-lesson-title{color:#111827;font-size:0.72rem;font-weight:800;line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .tcal-lesson-meta{color:#6b7280;font-size:0.62rem;font-weight:650;}
+    .tcal-lesson.is-live{box-shadow:0 0 0 1px var(--brand-primary),var(--shadow-raised);}
+    .tcal-live-tag{align-items:center;background:var(--brand-primary);border-radius:var(--radius-full);color:#fff;display:inline-flex;font-size:0.52rem;font-weight:800;gap:3px;letter-spacing:0.02em;margin-top:1px;padding:1px 6px;text-transform:uppercase;width:fit-content;}
+    .tcal-live-dot{animation:tcal-pulse 1.8s ease-in-out infinite;background:#fff;border-radius:50%;height:4px;width:4px;}
+    @keyframes tcal-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+    @media (prefers-reduced-motion:reduce){.tcal-live-dot{animation:none;}}
+    .tcal-now{align-items:center;display:flex;left:0;pointer-events:none;position:absolute;right:4px;}
+    .tcal-now::before{background:#e11d48;border-radius:50%;content:'';flex:none;height:6px;margin-left:-3px;width:6px;}
+    .tcal-now::after{background:#e11d48;content:'';flex:1;height:1.5px;}
+
+    /* Roster / "lista de clase" phone — mirrors roster-page.component's student row shape, with a
+       toggle-based attendance concept layered on (not built in the real app yet — mocked for the pitch). */
+    .att-row{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius-md);box-shadow:var(--shadow-resting);gap:8px;padding:8px 9px;}
+    .att-row .avatar{flex:0 0 auto;height:26px;width:26px;}
+    .att-name{min-width:0;}
+    .att-name .stu-name{overflow:hidden;text-overflow:ellipsis;}
+    .att-bulk{align-items:center;background:var(--brand-primary-surface);border:1px solid var(--brand-primary-surface-border);border-radius:var(--radius-md);display:flex;justify-content:space-between;padding:9px 11px;}
+    .att-bulk span:first-child{color:var(--brand-primary-text);font-size:0.76rem;font-weight:800;}
+    .tgl{background:#d1d5db;border-radius:var(--radius-full);display:inline-flex;flex:0 0 auto;height:20px;margin-left:auto;padding:2px;width:34px;}
+    .tgl-dot{background:#fff;border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,0.3);height:16px;transition:transform .15s ease;width:16px;}
+    .tgl.is-on{background:var(--brand-primary);}
+    .tgl.is-on .tgl-dot{transform:translateX(14px);}
