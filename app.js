@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var LEADS_ENDPOINT = 'https://openacademy-api-qbr9j.ondigitalocean.app/api/leads';
+  var LEADS_ENDPOINT = 'https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-ffb4ea1b-64d0-477c-9978-41ac17f8adeb/leads/submit';
 
   function initReveal() {
     var els = document.querySelectorAll('[data-reveal]');
@@ -96,11 +96,22 @@
 
       setBusy(true);
 
-      // FormData carries the fields plus Turnstile's injected cf-turnstile-response token, which
-      // the backend re-verifies server-side. multipart/form-data is CORS-safelisted, so no preflight.
+      var payload = {
+        academy: form.academy.value,
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        size: form.size.value,
+        message: form.message.value,
+        turnstileToken: token
+      };
+
+      // JSON isn't CORS-safelisted, so the browser preflights this with OPTIONS; the function
+      // answers that itself (web-custom-options) and re-verifies the Turnstile token server-side.
       fetch(LEADS_ENDPOINT, {
         method: 'POST',
-        body: new FormData(form)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       }).then(function (response) {
         if (response.ok) {
           form.hidden = true;
